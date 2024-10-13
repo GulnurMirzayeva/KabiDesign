@@ -1,0 +1,1050 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  background-color: black;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+/* Header Styles */
+.header {
+  width: 100%;
+  height: auto;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.nav {
+  width: 90%;
+  height: 68px;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 68px;
+  width: 68px;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 48px;
+  height: 48px;
+}
+
+/* Navbar Styles */
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  gap: 33px;
+}
+
+.navbar ul li {
+  list-style: none;
+  font-size: 20px;
+  position: relative;
+}
+
+.navbar ul li::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  background-color: #c18248;
+  transition: width 0.3s ease-in-out;
+  position: absolute;
+  left: -10px;
+  bottom: -2px;
+}
+
+.navbar ul li:hover::after {
+  width: calc(100% + 20px);
+}
+
+.navbar ul a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Multilanguage Dropdown */
+.language {
+  position: relative;
+  display: inline-block;
+  margin: 20px;
+}
+
+.language i {
+  position: relative;
+  font-size: 24px;
+  cursor: pointer;
+  padding-right: 10px;
+  color: white;
+}
+
+.language i::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid white;
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.4s ease;
+}
+
+.language i.open::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 80px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin-top: 5px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 6px 8px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Right Header Styles */
+.right-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.menu i {
+  color: white;
+  margin-right: 1rem;
+  cursor: pointer;
+  font-size: 22px;
+  transition: transform 0.4s ease;
+}
+
+.menu {
+  display: none;
+}
+
+.menu-dropdown-content {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 88px;
+  background-color: rgb(26, 23, 23);
+  width: 100%;
+  z-index: 1;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2),
+    0px 12px 24px 0px rgba(0, 0, 0, 0.2);
+  /* Gölgeli efekt */
+}
+
+.menu-dropdown-content a {
+  color: white;
+  padding: 7px 0;
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+
+.menu-dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Header Finish */
+/* Portfolio, Slide Start */
+.portfolio {
+  width: 100%;
+  height: 500px;
+  margin-top: 88px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-portfolio {
+  width: 48%;
+  height: 100%;
+  float: left;
+}
+
+.right-portfolio {
+  width: 48%;
+  height: 100%;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.portfolio-title {
+  font-size: 58px;
+  /* Responsive yapmak için vw kullanabilirsin */
+  color: white;
+  position: relative;
+}
+
+.portfolio-title::after {
+  content: "";
+  display: block;
+  width: 75%;
+  height: 1px;
+  /* Çizginin kalınlığını burada ayarlayabilirsin */
+  background-color: #c18248;
+  position: absolute;
+  bottom: -10px;
+  /* Yazının altına biraz boşluk bırakmak için */
+  left: 0;
+}
+
+.left-portfolio .turning {
+  font-size: 16px;
+  color: white;
+  margin-top: 15px;
+}
+
+.left-portfolio button {
+  margin-top: 20px;
+  width: 150px;
+  height: 50px;
+  background-color: #c18248;
+  border-radius: 50px;
+  border: none;
+}
+
+.left-portfolio a {
+  font-size: 20px;
+  color: black;
+  margin-right: 5px;
+}
+
+.left-portfolio i {
+  font-size: 22px;
+}
+
+.stat {
+  width: 100%;
+  height: auto;
+  display: flex;
+  gap: 50px;
+  margin-top: 30px;
+}
+
+.stat h3 {
+  color: white;
+  font-size: 24px;
+}
+
+.leftstat p {
+  color: #c18248;
+  font-size: 16px;
+}
+
+.social {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.social i {
+  color: white;
+}
+
+/* swiper slayder*/
+.right-portfolio .swiper {
+  width: 100%;
+  height: 85%;
+}
+
+.right-portfolio .mySwiper {
+  width: 100%;
+  height: 100%;
+}
+
+swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+
+swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.right-button button {
+  width: 48%;
+  height: 48px;
+  border-radius: 70px;
+}
+
+.setcall {
+  background-color: #c18248;
+  border: none;
+}
+
+.right-button a {
+  color: #000;
+  font-size: 20px;
+}
+
+.right-button p {
+  font-size: 20px;
+  color: white;
+}
+
+.right-button {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.forborder {
+  border-color: white;
+  background-color: #000 !important;
+}
+
+.finishp {
+  font-weight: bolder;
+}
+
+/* loading page finish */
+/* main page start */
+
+.main-page {
+  margin-top: 150px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-page h3 {
+  font-size: 32px;
+  color: white;
+  font-weight: bold;
+}
+
+.main-page-info {
+  width: 75%;
+  margin-top: 30px;
+}
+
+.main-page-info p {
+  font-size: 32px;
+  color: #c18248;
+  font-weight: bold;
+}
+
+.main-page-center {
+  margin-top: 30px;
+  width: 75%;
+  height: auto;
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.main-expand,
+.main-your,
+.main-design {
+  width: 100%;
+  height: auto;
+  display: flex;
+  z-index: 4;
+}
+
+.main-expand {
+  justify-content: start;
+}
+
+.main-your {
+  justify-content: end;
+}
+
+.main-design {
+  justify-content: start;
+  margin-top: 60px;
+}
+
+.main-page-center h3 {
+  font-size: 5vw;
+  font-weight: bold;
+}
+
+.imgformaincenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+/* main page finish */
+/* works page start */
+
+.works-page {
+  width: 100%;
+  height: auto;
+  margin-top: 150px;
+}
+
+.works-page-title {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.works-page-title h3 {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  position: relative;
+  cursor: pointer;
+}
+
+.works-page-title h3::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  background-color: #c18248;
+  transition: width 0.3s ease-in-out;
+  position: absolute;
+  left: -10px;
+  bottom: -2px;
+}
+
+.works-page-title h3:hover::after {
+  width: calc(100% + 20px);
+}
+
+.designes {
+  margin-top: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+}
+
+.interior-design {
+  margin-top: 30px;
+  width: 48%;
+  height: 100%;
+}
+
+.exterior-design {
+  margin-top: 30px;
+  width: 48%;
+  height: 100%;
+}
+
+.interior-design-title,
+.exterior-design-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: white;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.interior-design img,
+.exterior-design img,
+.exterior-design-click img {
+  width: 100%;
+  height: 350px;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  /* height: 100%; */
+  object-fit: cover;
+}
+
+.interior-design-normal,
+.exterior-design-normal {
+  display: block;
+}
+
+.interior-design-click,
+.exterior-design-click {
+  display: none;
+  justify-content: space-between;
+}
+
+.interior-slayd,
+.exterior-slayd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+.mySwiper {
+  width: 48%;
+}
+
+.interior-click-about,
+.exterior-click-about {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.interior-click-about p,
+.exterior-click-about p {
+  font-size: 20px;
+  color: white;
+  font-style: italic;
+}
+
+.exteriorgeri,
+.interiorgeri {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  width: 50px;
+  height: 20px;
+  border: none;
+}
+
+/* about page */
+.about-page {
+  color: #fff;
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+}
+
+.about-text {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+
+
+.texts {
+  position: relative;
+  padding: 20px 40px;
+  width: 100%;
+  /* max-width: 1216px; */
+  height: auto;
+  box-sizing: border-box;
+}
+
+.texts:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.texts ul {
+  list-style-type: none;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.texts ul li {
+  position: relative;
+  font-size: 15px;
+  font-style: italic;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.texts ul li::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #c18248;
+  border-radius: 50%;
+  background-color: transparent;
+  transform: translateY(-50%);
+}
+
+.texts p {
+  font-size: 16px;
+  font-style: italic;
+}
+
+/* about page finish */
+/* blog page start */
+.blog-page,
+.contact-page {
+  width: 100%;
+  height: auto;
+  margin-top: 150px;
+}
+
+.blog-page-title,
+.contact-title {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blog-page-title h3,
+.contact-title h3,
+.main-page-title h3,
+.about-text h1 {
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  cursor: pointer;
+}
+
+.blog-page-title h3::after,
+.contact-title h3::after,
+.main-page-title h3::after,
+.about-text h1::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  background-color: #c18248;
+  transition: width 0.3s ease-in-out;
+  position: absolute;
+  left: -10px;
+  bottom: -2px;
+}
+
+.blog-page-title h3:hover::after,
+.contact-title h3:hover::after,
+.main-page-title h3:hover::after,
+.about-text h1:hover::after {
+  width: calc(100% + 20px);
+}
+
+.blog-title {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.blog-title p {
+  color: white;
+  font-style: italic;
+  font-size: 25px;
+}
+
+.about-kabira,
+.contact-about {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.left-kabira,
+.left-contact {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.left-contact {
+  width: 50%;
+  justify-content: center;
+  align-items: start;
+}
+
+.left-kabira {
+  width: 100%;
+}
+
+.left-kabira p {
+  width: 100%;
+}
+
+.left-kabira p,
+.left-contact p {
+  font-style: italic;
+  font-size: 20px;
+  color: white;
+}
+
+.right-kabira {
+  display: flex;
+  justify-content: flex-end;
+  width: 70%;
+}
+
+.right-kabira img {
+  width: 80%;
+  height: 90%;
+  float: inline-end;
+  border-radius: 30px;
+  margin-top: 30px;
+}
+
+/* blog page finish */
+/* contact page start */
+.contact-page {
+  width: 100%;
+  height: auto;
+  background-image: url(./assets/img/scena\ \ \(3\).jpg);
+  background-position: center;
+  background-size: cover;
+  margin-top: 150px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.contact-title {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-contact {
+  width: 34%;
+  height: 100%;
+}
+
+.contact-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #c18248;
+  border-radius: 14px;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #c18248;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #c77a32;
+}
+
+.finishp {
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* responsive design */
+/* En büyük genişlik için */
+@media (max-width: 1205px) {
+  .portfolio {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .left-portfolio {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .stat {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+
+  .right-portfolio {
+    width: 100%;
+  }
+
+  .portfolio-title::after {
+    width: 100%;
+  }
+
+  .social {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main-page-info {
+    width: 75%;
+  }
+
+  .main-page-info p {
+    font-size: 25px;
+  }
+
+  .imgformaincenter img {
+    width: 90%;
+  }
+
+  .interior-slayd,
+  .exterior-slayd {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .swiper,
+  .interior-click-about,
+  .exterior-click-about,
+  .slaydresult {
+    width: 90%;
+  }
+}
+
+@media (max-width: 797px) {
+  .designes {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .interior-design {
+    width: 100%;
+  }
+
+  .exterior-design {
+    width: 100%;
+  }
+
+  .about-kabira,
+  .contact-about {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+    justify-content: space-between;
+  }
+
+  .left-kabira,
+  .left-contact {
+    width: 100%;
+  }
+
+  .left-kabira p,
+  .contact-about p {
+    font-size: 16px;
+  }
+
+  .right-kabira,
+  .right-contact {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .menu {
+    display: block;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .portfolio-title {
+    font-size: 40px;
+  }
+
+  .portfolio-title::after {
+    width: 100%;
+  }
+
+  .main-page h3 {
+    font-size: 25px;
+  }
+
+  .main-page-info {
+    width: 80%;
+  }
+
+  .main-page-info p {
+    font-size: 20px;
+  }
+
+  .main-page-center {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .main-page-center h3 {
+    font-size: 8vw;
+  }
+
+  .imgformaincenter {
+    width: 90%;
+    top: 60%;
+  }
+
+  .main-design {
+    margin-top: 100px;
+  }
+
+  .imgformaincenter img {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 392px) {
+  .portfolio-title {
+    font-size: 25px;
+  }
+
+  .turning {
+    font-size: 10px;
+  }
+
+  .title2 {
+    margin-top: 10px;
+  }
+
+  .main-page-info {
+    width: 90%;
+  }
+
+  .main-page-info p {
+    font-size: 16px;
+  }
+
+  .main-page-center {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .main-page-center h3 {
+    font-size: 10vw;
+  }
+
+  .imgformaincenter {
+    width: 100%;
+    top: 60%;
+  }
+
+  .imgformaincenter img {
+    width: 70%;
+    height: auto;
+  }
+}
